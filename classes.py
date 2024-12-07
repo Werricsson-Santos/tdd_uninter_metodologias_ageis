@@ -6,6 +6,12 @@ class Produto:
         self.quantidade = quantidade
         self.valor = valor
     
+    def calcular_valor_total(self):
+        return self.quantidade * self.valor
+
+    def tem_estoque(self, quantidade_requerida):
+        return self.quantidade >= quantidade_requerida
+    
 class Funcionario:
     def __init__(self, idFuncionario, nome, cpf, email, contato, endereco, cargo, departamento, salario, admin):
         self.idFuncionario = idFuncionario
