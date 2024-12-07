@@ -17,7 +17,8 @@ class TestProduto(unittest.TestCase):
 
     def test_quantidade_insuficiente(self):
         produto = Produto(103, "Valeo", "Pastilha de freio", 5, 120.00)
-        self.assertEqual(produto.assertFalse(produto.tem_estoque()))
+        self.assertFalse(produto.tem_estoque(10))
+        self.assertTrue(produto.tem_estoque(5))
 
 class TestFuncionario(unittest.TestCase):
     def test_criacao_funcionario(self):
