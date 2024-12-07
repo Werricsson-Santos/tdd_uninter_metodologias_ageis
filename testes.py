@@ -1,6 +1,6 @@
 import unittest
 
-from classes import Produto
+from classes import Produto, Funcionario
 
 class TestProduto(unittest.TestCase):
     def test_criacao_produto(self):
@@ -25,3 +25,8 @@ class TestFuncionario(unittest.TestCase):
         self.assertEqual(funcionario.departamento, "Oficina")
         self.assertEqual(funcionario.salario, 3500.00)
         self.assertFalse(funcionario.admin)
+
+
+
+if __name__ == "__main__":
+    unittest.main()
