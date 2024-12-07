@@ -24,3 +24,8 @@ class Funcionario:
         self.departamento = departamento
         self.salario = salario
         self.admin = admin
+
+    def acessar_area_admin(self):
+        response = "Acesso liberado." if self.admin else "Você não possui acesso administrativo."
+
+        return response
