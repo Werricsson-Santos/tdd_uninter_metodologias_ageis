@@ -35,6 +35,16 @@ class TestFuncionario(unittest.TestCase):
         self.assertEqual(funcionario.salario, 3500.00)
         self.assertFalse(funcionario.admin)
 
+    def test_acesso_admin(self):
+        mecanico = Funcionario(1, "Carlos Santos", "12345678900", "carlos_santos@autocenterfernandes.com", "999999999",
+                                  "Rua A, 123", "Mecânico", "Oficina", 3500.00, False)
+        self.assertFalse(mecanico.admin)
+        self.assertEqual(mecanico.acessar_area_admin, "Você não possui acesso administrativo.")
+
+        gerente_admin = Funcionario(3, "José Marinho", "11223344556", "jose_marinho@autocenterfernandes.com", "777777777", 
+                                   "Rua C, 789", "Gerente", "Administração", 7000.00, True)
+        self.assertTrue(mecanico.admin)
+        self.assertEqual(mecanico.acessar_area_admin, "Acesso liberado.")
 
 
 if __name__ == "__main__":
