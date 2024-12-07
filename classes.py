@@ -7,5 +7,14 @@ class Produto:
         self.valor = valor
     
 class Funcionario:
-    #implementação da classe funcionario
-    print("WiP")
+    def __init__(self, idFuncionario, nome, cpf, email, contato, endereco, cargo, departamento, salario, admin):
+        self.idFuncionario = idFuncionario
+        self.nome = nome
+        self.cpf = cpf
+        self.email = email
+        self.contato = contato
+        self.endereco = endereco
+        self.cargo = cargo
+        self.departamento = departamento
+        self.salario = salario
+        self.admin = admin
