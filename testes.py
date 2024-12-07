@@ -10,3 +10,18 @@ class TestProduto(unittest.TestCase):
         self.assertEqual(produto.tipo, "Filtro de óleo")
         self.assertEqual(produto.quantidade, 20)
         self.assertEqual(produto.valor, 50.00)
+
+class TestFuncionario(unittest.TestCase):
+    def test_criacao_funcionario(self):
+        funcionario = Funcionario(1, "Carlos Santos", "12345678900", "carlos_santos@autocenterfernandes.com", "999999999",
+                                  "Rua A, 123", "Mecânico", "Oficina", 3500.00, False)
+        self.assertEqual(funcionario.idFuncionario, 1)
+        self.assertEqual(funcionario.nome, "Carlos Santos")
+        self.assertEqual(funcionario.cpf, "12345678900")
+        self.assertEqual(funcionario.email, "carlos_santos@autocenterfernandes.com")
+        self.assertEqual(funcionario.contato, "999999999")
+        self.assertEqual(funcionario.endereco, "Rua A, 123")
+        self.assertEqual(funcionario.cargo, "Mecânico")
+        self.assertEqual(funcionario.departamento, "Oficina")
+        self.assertEqual(funcionario.salario, 3500.00)
+        self.assertFalse(funcionario.admin)
