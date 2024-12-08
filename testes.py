@@ -2,9 +2,14 @@ import unittest
 
 from classes import Produto, Funcionario
 
+# Iniciamos implementando os testes para depois criar as classes ou features.
 class TestProduto(unittest.TestCase):
     def test_criacao_produto(self):
         produto = Produto(1, "Bosch", "Filtro de óleo", 20, 50.00)
+
+        #Exibe as informações do produto antes de realizar os testes
+        produto.exibir_informacoes()
+
         self.assertEqual(produto.idProduto, 1)
         self.assertEqual(produto.marca, "Bosch")
         self.assertEqual(produto.tipo, "Filtro de óleo")
@@ -24,6 +29,10 @@ class TestFuncionario(unittest.TestCase):
     def test_criacao_funcionario(self):
         funcionario = Funcionario(1, "Carlos Santos", "12345678900", "carlos_santos@autocenterfernandes.com", "999999999",
                                   "Rua A, 123", "Mecânico", "Oficina", 3500.00, False)
+        
+        #Exibe as informações do funcionário antes de realizar os testes
+        funcionario.exibir_informacoes()
+
         self.assertEqual(funcionario.idFuncionario, 1)
         self.assertEqual(funcionario.nome, "Carlos Santos")
         self.assertEqual(funcionario.cpf, "12345678900")
@@ -34,6 +43,7 @@ class TestFuncionario(unittest.TestCase):
         self.assertEqual(funcionario.departamento, "Oficina")
         self.assertEqual(funcionario.salario, 3500.00)
         self.assertFalse(funcionario.admin)
+
 
     def test_acesso_admin(self):
         mecanico = Funcionario(1, "Carlos Santos", "12345678900", "carlos_santos@autocenterfernandes.com", "999999999",
